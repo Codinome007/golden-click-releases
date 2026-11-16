@@ -1,0 +1,29 @@
+name: Relatar erro
+description: Conte o que aconteceu no Golden Click.
+title: "[Erro] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Versão do Golden Click
+      placeholder: "12.8.0"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      description: Informe o que fez e o que aconteceu, sem dados pessoais.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      description: Versão do Windows, escala da tela e resolução da janela.

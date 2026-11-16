@@ -1,0 +1,14 @@
+name: Sugerir melhoria
+description: Proponha uma melhoria para o Golden Click.
+title: "[Sugestão] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: O que você deseja melhorar?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Como a mudança ajudaria no uso?
