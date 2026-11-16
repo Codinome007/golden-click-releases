@@ -1,19 +1,23 @@
-## Golden Click 12.8.0
+## Golden Click 12.8.1
 
-### Downloads
-- **Instalador:** extraia Golden_Click_Instalador_Windows11_x64.zip e abra Instalar_Golden_Click.exe.
-- **Portátil:** extraia Golden_Click_Portatil_Windows11_x64.zip e abra GoldenClick.exe.
+### Janela capturada e coordenadas proporcionais
+- A coluna **Janela** registra sempre a área interna da janela capturada, sem bordas ou barra de título. Não usa a resolução do monitor.
+- Cliques X/Y com referência de janela se ajustam proporcionalmente ao tamanho atual e acompanham a posição da janela na tela.
+- Cada uma das duas janelas selecionadas usa suas próprias dimensões.
+- As coordenadas originais permanecem salvas, evitando erro acumulado após vários redimensionamentos.
+- Passe o mouse em X, Y ou Janela na lista para conferir a prévia na janela de teste.
 
-### Novidades
-- Consulta automática de versões ao iniciar e a cada seis horas.
-- Opção **Verificar atualização** no menu perto do relógio e nas configurações.
-- Download conferido por SHA-256 e formato Windows x64.
-- Ícone do golden verde durante a automação, resolução por clique e atalhos configuráveis.
+**Exemplo:** o ponto **480,270** numa janela **960×540** passa para **640,360** numa janela **1280×720**.
 
-### Perfis
-Instala em C:\Golden Click e preserva as pastas de perfis. Feche as outras instâncias antes de instalar. A instalação das atualizações depende da sua confirmação e da permissão do Windows.
+### Perfis existentes
+Registros anteriores com referência de janela válida já podem se ajustar. Cliques antigos baseados no monitor ou sem referência mostram **—** e precisam de uma recaptura para habilitar o ajuste. Até lá, mantêm o modo anterior, sem usar a dimensão do monitor como se fosse a da janela.
+
+O ajuste é proporcional para cliques por coordenadas. Cliques por imagem continuam dependendo do reconhecimento e dos recortes compatíveis com a resolução. Se o layout interno reposicionar elementos de outra forma, pode ser necessário recapturar pontos ou imagens.
+
+### Instalar ou atualizar
+Baixe o instalador ou o pacote portátil abaixo. O instalador usa `C:\Golden Click` e preserva os perfis da pasta. Feche as outras instâncias antes de instalar. Na versão 12.8.0, você também pode usar **Verificar atualização** no menu perto do relógio.
 
 ### Validação
-Compilação Windows x64 aprovada no GitHub Actions, com 14 verificações do atualizador. Interface e instalação ainda precisam de teste interativo no computador de destino.
+22 verificações de coordenadas/persistência e 14 verificações do atualizador. Compilação automatizada no Windows x64. Interface, instalação e cliques no programa de destino ainda precisam de teste interativo.
 
-Os pacotes não contêm o código-fonte do aplicativo. Os links **Source code** gerados pelo GitHub contêm somente documentação e arquivos de publicação do canal público.
+Os pacotes não incluem o código-fonte do aplicativo. Os links **Source code** automáticos do GitHub contêm somente a documentação e os arquivos de publicação do canal público.

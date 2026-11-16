@@ -1,5 +1,13 @@
 # Histórico de versões
 
+## 12.8.1
+
+- Capturas registram sempre a área interna da janela, sem usar a resolução do monitor.
+- Ajuste proporcional de X/Y ao tamanho e à posição atuais de cada janela.
+- Prévia de coordenadas na lista e preservação dos valores originais.
+- Compatibilidade de perfis antigos; recaptura necessária quando não há referência de janela.
+- 22 verificações de coordenadas e persistência.
+
 ## 12.8.0
 
 - Canal público de downloads separado do código privado.

@@ -29,7 +29,8 @@ Os arquivos de download ficam nas **[Releases](https://github.com/Codinome007/go
 - Criar perfis com sequência, botão, tipo de clique e pausa individual.
 - Repetir por quantidade ou continuamente e usar atalhos globais configuráveis.
 - Selecionar até duas janelas e organizá-las em quatro alinhamentos.
-- Usar coordenadas ou referências de imagem; consultar a resolução registrada por clique.
+- Usar coordenadas ou referências de imagem; consultar o tamanho da janela capturada por clique.
+- Ajustar cliques X/Y proporcionalmente quando a janela for movida ou redimensionada.
 - Controlar o programa pelo ícone perto do relógio, que fica verde durante os cliques.
 - Consultar novas versões pelo próprio aplicativo, sem conta ou token do GitHub.
 
@@ -47,6 +48,16 @@ Para ocultar a janela, minimize. Clique duas vezes no golden perto do relógio p
 A partir da versão 12.8.0, o programa consulta o canal oficial ao abrir e periodicamente. Para baixar e instalar uma versão disponível, use **Verificar atualização** no menu do ícone ou em **Atalhos e arquivos**. O download é conferido por SHA-256 antes de executar o instalador; a instalação é confirmada pelo usuário e pelo Windows. Feche as demais instâncias antes de instalar.
 
 Os perfis e imagens ficam em `dados` e `dados-instancia-N`, ao lado do executável. O instalador preserva esses arquivos e copia os perfis da antiga pasta padrão `C:\ClickVision Pro` quando a pasta correspondente ainda não existe no novo destino. Faça a transferência manual se usava outra pasta portátil.
+
+## Janela capturada e redimensionamento
+
+Na versão 12.8.1, a coluna **Janela** registra a área interna da janela, sem barra de título e bordas. A resolução do monitor não é usada. Os cliques X/Y acompanham o tamanho e a posição atuais de cada janela selecionada, mantendo as coordenadas originais salvas.
+
+Exemplo: um ponto **480,270** em **960×540** passa para **640,360** em **1280×720**. Passe o mouse em X, Y ou Janela para conferir a prévia na janela de teste.
+
+Cliques antigos com referência de janela válida também se ajustam. Se aparecer **—**, ou o registro antigo tiver sido feito pela resolução do monitor, recapture o ponto uma vez para habilitar o ajuste. O programa não tenta adivinhar a dimensão da janela anterior.
+
+A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
 ## Compatibilidade
 

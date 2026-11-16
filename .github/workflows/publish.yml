@@ -1,50 +1,27 @@
 name: Publicar executáveis oficiais
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Versão estável, por exemplo 12.8.1'
-        required: true
-      installer_url:
-        description: 'URL temporária do artefato do instalador'
-        required: true
-      installer_sha256:
-        description: 'SHA-256 do ZIP do instalador'
-        required: true
-      portable_url:
-        description: 'URL temporária do artefato portátil'
-        required: true
-      portable_sha256:
-        description: 'SHA-256 do ZIP portátil'
-        required: true
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish.yml']
 permissions:
   contents: write
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ inputs.version }}
-      INSTALLER_URL: ${{ inputs.installer_url }}
-      PORTABLE_URL: ${{ inputs.portable_url }}
-      INSTALLER_SHA256: ${{ inputs.installer_sha256 }}
-      PORTABLE_SHA256: ${{ inputs.portable_sha256 }}
     steps:
       - uses: actions/checkout@v4
       - name: Preparar pacotes verificados
         shell: bash
         run: |
           set -euo pipefail
-          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
-          [[ "$INSTALLER_SHA256" =~ ^[a-fA-F0-9]{64}$ ]]
-          [[ "$PORTABLE_SHA256" =~ ^[a-fA-F0-9]{64}$ ]]
-          [[ "$INSTALLER_URL" == https://* ]]
-          [[ "$PORTABLE_URL" == https://* ]]
-          echo "::add-mask::$INSTALLER_URL"
-          echo "::add-mask::$PORTABLE_URL"
-          curl --fail --location --silent --show-error --retry 2 "$INSTALLER_URL" -o Golden_Click_Instalador_Windows11_x64.zip
-          curl --fail --location --silent --show-error --retry 2 "$PORTABLE_URL" -o Golden_Click_Portatil_Windows11_x64.zip
-          echo "$INSTALLER_SHA256  Golden_Click_Instalador_Windows11_x64.zip" | sha256sum -c -
-          echo "$PORTABLE_SHA256  Golden_Click_Portatil_Windows11_x64.zip" | sha256sum -c -
+          installer_url=$(jq -r .installer_url .release-inputs.json)
+          portable_url=$(jq -r .portable_url .release-inputs.json)
+          echo "::add-mask::$installer_url"
+          echo "::add-mask::$portable_url"
+          curl --fail --location --silent --show-error --retry 2 "$installer_url" -o Golden_Click_Instalador_Windows11_x64.zip
+          curl --fail --location --silent --show-error --retry 2 "$portable_url" -o Golden_Click_Portatil_Windows11_x64.zip
+          echo "$(jq -r .installer_sha256 .release-inputs.json)  Golden_Click_Instalador_Windows11_x64.zip" | sha256sum -c -
+          echo "$(jq -r .portable_sha256 .release-inputs.json)  Golden_Click_Portatil_Windows11_x64.zip" | sha256sum -c -
           python3 - <<'PY'
           import zipfile
           for name, required in [('Golden_Click_Instalador_Windows11_x64.zip','Instalar_Golden_Click.exe'),('Golden_Click_Portatil_Windows11_x64.zip','GoldenClick.exe')]:
@@ -59,4 +36,5 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          gh release create "v$VERSION" Golden_Click_Instalador_Windows11_x64.zip Golden_Click_Portatil_Windows11_x64.zip --repo "$GITHUB_REPOSITORY" --title "Golden Click $VERSION" --notes-file RELEASE_NOTES.md --latest
+          version=$(jq -r .version .release-inputs.json)
+          gh release create "v$version" Golden_Click_Instalador_Windows11_x64.zip Golden_Click_Portatil_Windows11_x64.zip --repo "$GITHUB_REPOSITORY" --title "Golden Click $version" --notes-file RELEASE_NOTES.md --latest
