@@ -58,4 +58,4 @@ Encontrou um problema? Abra uma [issue](https://github.com/Codinome007/golden-cl
 
 ---
 
-<div align="center">Mantido por <a href="https://github.com/Codinome007">Andrew Curi</a> · Golden Click</div>
+<div align="center">Mantido por <a href="https://github.com/Codinome007">Codinome007</a> · Golden Click</div>
