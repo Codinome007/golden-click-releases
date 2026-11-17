@@ -59,6 +59,10 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
+## Versão atual: 12.9.3
+
+Correção da versão exibida: a barra de título, o ícone perto do relógio e a tela do instalador agora usam a versão do próprio executável, evitando o antigo texto fixo 12.8.1.
+
 ## Novidades da versão 12.9.2
 
 - Importe várias contas por CSV/TXT, com prévia e senhas ocultas.
