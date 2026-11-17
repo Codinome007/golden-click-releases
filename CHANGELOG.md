@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 12.9.4
+
+- Abertura calibrada opcional antes de preencher login e senha.
+- Teste de abertura sem credenciais e espera após abrir configurável.
+- Clique posterior a Carregar, com espera independente de 0 a 120000 ms.
+- Edição de calibrações existentes, preservando compatibilidade com as antigas.
+- Preencher não envia nem executa o clique posterior; Entrar / testar executa a sequência completa.
+- Testes de ordem das etapas, cancelamento, limites e persistência.
+
 ## 12.9.3
 
 - Remove o texto fixo 12.8.1 da barra de título.
