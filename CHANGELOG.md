@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 12.9.6
+
+- Corrige Entrar / testar para iniciar o perfil escolhido após o login individual e a espera.
+- Perfil após login usa somente destinos que receberam login, sem duplicação.
+- Selecionar a mesma janela nos dois campos não bloqueia nem duplica os cliques do perfil.
+- Login somente na Janela 2 não exige Janela 1 para o perfil final.
+- Foco no primeiro destino antes de iniciar o perfil.
+- Preencher continua sem perfil; fila mantém perfil somente após a última conta.
+- Regressões cobrem destino repetido, destinos distintos e login individual seguido de perfil.
+
 ## 12.9.5
 
 - Fila de contas na ordem de marcação, com coluna Ordem.
