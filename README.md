@@ -59,7 +59,13 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.9.3
+## Versão atual: 12.9.4
+
+Na aba **Login — Teste → Calibrar formulário**, habilite **Abrir formulário antes de preencher**, capture o botão na tela de sessão e ajuste **Espera após abrir (ms)**. Use **Testar abertura (3 s)** para abrir sem preencher credenciais. Capture então Código/login, Senha e Carregar. Para o passo final, habilite **Clique adicional após Carregar**, capture o ponto e ajuste **Espera antes do clique posterior (ms)**.
+
+Use **Calibrado (abertura opcional)**. **Preencher** abre (se habilitado) e preenche os campos. **Entrar / testar** também clica em Carregar, aguarda e executa o clique posterior habilitado. Os dois tempos são independentes, de 0 a 120000 ms (1000 ms = 1 segundo). Desative a abertura se o formulário já estiver aberto. Configurações ficam salvas por janela; calibrações antigas continuam sem os extras. F9 cancela também durante as esperas. Recalibre se o tamanho da janela mudar. O fluxo usa coordenadas e tempo; confira no jogo se cada tela abriu e se o login foi aceito.
+
+### Correção mantida da 12.9.3
 
 Correção da versão exibida: a barra de título, o ícone perto do relógio e a tela do instalador agora usam a versão do próprio executável, evitando o antigo texto fixo 12.8.1.
 
@@ -69,7 +75,7 @@ Correção da versão exibida: a barra de título, o ícone perto do relógio e 
 - Salve um modelo CSV pelo aplicativo e preencha uma conta por linha: `nome;login;senha;janela`.
 - Até 1.000 contas por arquivo; duplicatas na mesma janela preservam a senha existente.
 - Selecione a conta após importar; a importação não inicia o login.
-- Se o formulário não for reconhecido, abra Transferir dados manualmente e use Calibrar formulário para marcar código, senha e Carregar. Escolha Formulário já aberto (pontos calibrados).
+- Se o formulário não for reconhecido, abra Transferir dados manualmente e use Calibrar formulário para marcar código, senha e Carregar. Escolha Calibrado (abertura opcional); habilite os pontos extras se precisar.
 
 As contas ficam protegidas pelo usuário atual do Windows, fora dos perfis exportados e dos pacotes. Não acompanham o ZIP portátil para outro computador. O arquivo de importação contém senhas legíveis; mantenha-o protegido ou exclua-o após usar. O preenchimento e a autenticação precisam de teste no cliente do jogo.
 
