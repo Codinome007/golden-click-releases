@@ -1,24 +1,17 @@
-# Golden Click 12.9.3
+# Golden Click 12.9.4
 
-## Correção da versão exibida
+## Calibração com abertura e clique posterior
 
-O título da janela ainda exibia 12.8.1 como texto fixo nos pacotes 12.9.x. Agora a barra de título e o ícone perto do relógio obtêm a versão da assembly do aplicativo. A tela do instalador também lê sua própria versão. A versão interna dos pacotes anteriores não era determinada por esse título.
+Na aba **Login — Teste → Calibrar formulário**, habilite **Abrir formulário antes de preencher**, capture o botão na tela de sessão e ajuste **Espera após abrir (ms)**. Use **Testar abertura (3 s)** para abrir sem preencher credenciais. Capture então Código/login, Senha e Carregar. Para o passo final, habilite **Clique adicional após Carregar**, capture o ponto e ajuste **Espera antes do clique posterior (ms)**.
 
-
-## Importação de várias contas
-
-Nova opção Importar contas na aba Login — Teste, com prévia e senhas ocultas. Use Salvar modelo CSV e preencha nome;login;senha;janela, uma conta por linha. Aceita CSV/TXT, até 1.000 contas e 2 MB. Registros repetidos na mesma janela são ignorados sem substituir a senha existente. Após importar, escolha qual conta acessar.
-
-## Login com formulário calibrado
-
-Se a imagem não for reconhecida, abra Transferir dados manualmente, selecione a conta e use Calibrar formulário para marcar código, senha e Carregar. Escolha Formulário já aberto (pontos calibrados) e use Preencher. Se redimensionar a janela, recalibre. F9 interrompe. O envio do formulário não comprova autenticação; confira no jogo.
+Use **Calibrado (abertura opcional)**. **Preencher** abre (se habilitado) e preenche os campos. **Entrar / testar** também clica em Carregar, aguarda e executa o clique posterior habilitado. Os dois tempos são independentes, de 0 a 120000 ms (1000 ms = 1 segundo). Desative a abertura se o formulário já estiver aberto. Configurações ficam salvas por janela; calibrações antigas continuam sem os extras. F9 cancela também durante as esperas. Recalibre se o tamanho da janela mudar. O fluxo usa coordenadas e tempo; confira no jogo se cada tela abriu e se o login foi aceito.
 
 ## Instalar ou atualizar
 
-Baixe Golden_Click_Instalador_Windows11_x64.zip e execute Instalar_Golden_Click.exe após extrair. Instala em C:\Golden Click e cria atalho na Área de Trabalho. Para usar sem instalação, extraia Golden_Click_Portatil_Windows11_x64.zip e abra GoldenClick.exe. Feche as demais instâncias antes de instalar. Perfis anteriores são preservados; contas ficam protegidas para o usuário atual do Windows.
+Baixe e extraia **Golden_Click_Instalador_Windows11_x64.zip**, depois execute **Instalar_Golden_Click.exe**. Feche todas as instâncias antes de instalar. O destino é C:\Golden Click, com atalho na Área de Trabalho e preservação dos perfis. Para usar sem instalar, extraia **Golden_Click_Portatil_Windows11_x64.zip** e abra **GoldenClick.exe**.
 
-Os pacotes não incluem código-fonte, contas ou senhas. O CSV de origem continua legível: mantenha-o protegido ou remova-o quando não for mais necessário. Os links Source code do GitHub contêm somente a documentação do canal público.
+Importação de contas, proteção de senhas, versão automática no título e demais recursos anteriores mantidos. Os pacotes não contêm código-fonte, contas ou senhas. Os arquivos automáticos Source code contêm somente a documentação pública.
 
 ## Validação
 
-Pacotes compilados no Windows x64; 90 testes automatizados aprovados. SHA-256, versão interna 12.9.3 e ausência de código-fonte são verificados antes da publicação. Interface, instalação e funcionamento do login precisam ser conferidos no computador de destino.
+Compilação e testes automatizados em Windows x64. A publicação confere SHA-256, versão interna 12.9.4 e ausência de código-fonte. Interface, instalação e comportamento do cliente do jogo precisam ser conferidos no computador de destino.
