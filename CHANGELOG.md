@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 12.9.7
+
+- Corrige referência nula ao atualizar a coluna Ordem durante ItemCheck.
+- Atualização visual adiada até o evento nativo terminar e agrupada entre marcações.
+- Linhas identificadas pelo ID da conta, sem dependência do índice.
+- Recompõe a coluna Ordem quando uma linha estiver incompleta.
+- Testes da interface WinForms real no Windows para seleção, remarcação, recarga, remoção e marcações rápidas.
+- Mantém login, perfil final, contas, calibrações e temporizações.
+
 ## 12.9.6
 
 - Corrige Entrar / testar para iniciar o perfil escolhido após o login individual e a espera.
