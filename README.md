@@ -59,7 +59,13 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.9.6
+## Versão atual: 12.9.7
+
+Corrige a exceção **System.NullReferenceException em UpdateLoginOrderLabels** ao marcar contas da fila. A coluna Ordem passa a ser atualizada depois do evento de marcação do Windows, com cada linha associada ao ID da conta. A ordem de seleção continua sendo registrada imediatamente, e marcações seguidas são agrupadas na atualização visual.
+
+Contas, senhas protegidas, perfis, calibrações e tempos anteriores são preservados. **Entrar / testar** mantém login individual seguido do perfil escolhido; **Iniciar fila de login** mantém o perfil após a última conta. F9 continua interrompendo toda a rotina.
+
+### Perfil após login — 12.9.6
 
 Corrigido o início do perfil após login. **Entrar / testar** agora executa o login individual e, depois da **Espera antes do perfil (s)**, inicia o perfil escolhido em **Após login / fim da fila**. **Preencher** continua somente preenchendo os campos. **Iniciar fila de login** mantém o perfil após a última conta.
 
