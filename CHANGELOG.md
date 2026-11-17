@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 12.9.5
+
+- Fila de contas na ordem de marcação, com coluna Ordem.
+- Espera inicial, intervalo entre contas e espera antes do perfil final em segundos.
+- Perfil opcional ao concluir toda a fila, respeitando seus destinos e repetições.
+- Configuração salva por instância, sem credenciais no arquivo da fila; não inicia ao abrir o programa.
+- Validação antes de começar, ordem e perfil fixados por execução.
+- Erros e F9 interrompem a fila, esperas e perfil; não há tentativas automáticas.
+- Testes de persistência, ordem, limites, intervalos e interrupção.
+
 ## 12.9.4
 
 - Abertura calibrada opcional antes de preencher login e senha.
