@@ -1,5 +1,13 @@
 # Histórico de versões
 
+## 12.9.3
+
+- Remove o texto fixo 12.8.1 da barra de título.
+- Janela, área de notificação e instalador mostram sua versão real.
+- Mantém importação de contas e calibração de login.
+- Compilação Windows x64 e 90 testes de regressão aprovados.
+
+
 ## 12.9.2
 
 - Importação de CSV/TXT com prévia e senhas ocultas, até 1.000 contas.
