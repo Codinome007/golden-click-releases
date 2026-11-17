@@ -1,4 +1,9 @@
-# Golden Click 12.9.2
+# Golden Click 12.9.3
+
+## Correção da versão exibida
+
+O título da janela ainda exibia 12.8.1 como texto fixo nos pacotes 12.9.x. Agora a barra de título e o ícone perto do relógio obtêm a versão da assembly do aplicativo. A tela do instalador também lê sua própria versão. A versão interna dos pacotes anteriores não era determinada por esse título.
+
 
 ## Importação de várias contas
 
@@ -16,4 +21,4 @@ Os pacotes não incluem código-fonte, contas ou senhas. O CSV de origem continu
 
 ## Validação
 
-Pacotes compilados no Windows x64; 90 testes automatizados aprovados. SHA-256, versão interna 12.9.2 e ausência de código-fonte são verificados antes da publicação. Interface, instalação e funcionamento do login precisam ser conferidos no computador de destino.
+Pacotes compilados no Windows x64; 90 testes automatizados aprovados. SHA-256, versão interna 12.9.3 e ausência de código-fonte são verificados antes da publicação. Interface, instalação e funcionamento do login precisam ser conferidos no computador de destino.
