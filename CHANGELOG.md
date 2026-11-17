@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 12.9.2
+
+- Importação de CSV/TXT com prévia e senhas ocultas, até 1.000 contas.
+- Modelo CSV, validação de linhas e preservação de contas repetidas.
+- Calibração manual de formulário e proteção de credenciais mantidas.
+- Compilação Windows x64 e 90 testes automatizados aprovados.
+- Publicação confere SHA-256 e versão interna dos executáveis.
+
+
 ## 12.8.1
 
 - Capturas registram sempre a área interna da janela, sem usar a resolução do monitor.
