@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Versão estável, por exemplo 12.8.1'
+        description: 'Versão estável, por exemplo 12.9.2'
         required: true
       installer_url:
         description: 'URL temporária do artefato do instalador'
@@ -22,41 +22,80 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ inputs.version }}
-      INSTALLER_URL: ${{ inputs.installer_url }}
-      PORTABLE_URL: ${{ inputs.portable_url }}
-      INSTALLER_SHA256: ${{ inputs.installer_sha256 }}
-      PORTABLE_SHA256: ${{ inputs.portable_sha256 }}
     steps:
       - uses: actions/checkout@v4
-      - name: Preparar pacotes verificados
+      - name: Baixar e validar os executáveis
         shell: bash
         run: |
-          set -euo pipefail
-          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
-          [[ "$INSTALLER_SHA256" =~ ^[a-fA-F0-9]{64}$ ]]
-          [[ "$PORTABLE_SHA256" =~ ^[a-fA-F0-9]{64}$ ]]
-          [[ "$INSTALLER_URL" == https://* ]]
-          [[ "$PORTABLE_URL" == https://* ]]
-          echo "::add-mask::$INSTALLER_URL"
-          echo "::add-mask::$PORTABLE_URL"
-          curl --fail --location --silent --show-error --retry 2 "$INSTALLER_URL" -o Golden_Click_Instalador_Windows11_x64.zip
-          curl --fail --location --silent --show-error --retry 2 "$PORTABLE_URL" -o Golden_Click_Portatil_Windows11_x64.zip
-          echo "$INSTALLER_SHA256  Golden_Click_Instalador_Windows11_x64.zip" | sha256sum -c -
-          echo "$PORTABLE_SHA256  Golden_Click_Portatil_Windows11_x64.zip" | sha256sum -c -
           python3 - <<'PY'
-          import zipfile
-          for name, required in [('Golden_Click_Instalador_Windows11_x64.zip','Instalar_Golden_Click.exe'),('Golden_Click_Portatil_Windows11_x64.zip','GoldenClick.exe')]:
-              with zipfile.ZipFile(name) as z:
-                  assert z.testzip() is None
-                  assert required in z.namelist()
-                  assert not any(n.endswith(('.cs','.csproj','.pdb','.py')) for n in z.namelist())
+          import hashlib, json, os, pathlib, re, struct, sys, urllib.parse, urllib.request, zipfile
+          try:
+              inputs = json.load(open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8"))["inputs"]
+              version = inputs["version"]
+              if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
+                  raise ValueError("version")
+              major, minor, patch = map(int, version.split("."))
+              if max(major, minor, patch) > 65535:
+                  raise ValueError("version")
+              for kind, required, instructions in [
+                  ("installer", "Instalar_Golden_Click.exe", "LEIA-ME.txt"),
+                  ("portable", "GoldenClick.exe", "COMO_ABRIR.txt")
+              ]:
+                  url, digest = inputs[kind + "_url"], inputs[kind + "_sha256"].lower()
+                  parsed = urllib.parse.urlsplit(url)
+                  if (parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password
+                      or any(ord(c) < 32 for c in url) or not re.fullmatch("[a-f0-9]{64}", digest)):
+                      raise ValueError("download input")
+                  print("::add-mask::" + url, flush=True)
+                  filename = "Golden_Click_" + ("Instalador" if kind == "installer" else "Portatil") + "_Windows11_x64.zip"
+                  destination = pathlib.Path(filename)
+                  with urllib.request.urlopen(url, timeout=120) as response, destination.open("wb") as output:
+                      total = 0
+                      while chunk := response.read(1024 * 1024):
+                          total += len(chunk)
+                          if total > 220 * 1024 * 1024:
+                              raise ValueError("size")
+                          output.write(chunk)
+                  with destination.open("rb") as source:
+                      if hashlib.file_digest(source, "sha256").hexdigest() != digest:
+                          raise ValueError("SHA-256")
+                  with zipfile.ZipFile(destination) as archive:
+                      if archive.testzip() is not None:
+                          raise ValueError("archive")
+                      if any(n.lower().endswith((".cs", ".csproj", ".pdb", ".py", "accounts.bin")) for n in archive.namelist()):
+                          raise ValueError("unexpected files")
+                      if version not in archive.read(instructions).decode("utf-8-sig"):
+                          raise ValueError("instructions version")
+                      binary = archive.read(required)
+                      offset = struct.unpack_from("<I", binary, 60)[0]
+                      if binary[:2] != b"MZ" or binary[offset:offset+4] != b"PE\x00\x00" or struct.unpack_from("<H", binary, offset+4)[0] != 0x8664:
+                          raise ValueError("Windows x64")
+                      at, found = 0, False
+                      while (at := binary.find(struct.pack("<I", 0xFEEF04BD), at)) >= 0:
+                          found |= struct.unpack_from("<II", binary, at+8) == ((major << 16) | minor, patch << 16)
+                          at += 4
+                      if not found:
+                          raise ValueError("executable version")
+                  print(filename + ": SHA-256, Windows x64 e versão " + version + " verificados", flush=True)
+          except Exception as failure:
+              print("Falha ao preparar pacotes (" + type(failure).__name__ + "). Nenhuma versão foi publicada.", file=sys.stderr)
+              sys.exit(1)
           PY
-      - name: Publicar versão
+      - name: Publicar versão validada
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          gh release create "v$VERSION" Golden_Click_Instalador_Windows11_x64.zip Golden_Click_Portatil_Windows11_x64.zip --repo "$GITHUB_REPOSITORY" --title "Golden Click $VERSION" --notes-file RELEASE_NOTES.md --latest
+          version=$(jq -r .inputs.version "$GITHUB_EVENT_PATH")
+          gh release create "v$version" Golden_Click_Instalador_Windows11_x64.zip Golden_Click_Portatil_Windows11_x64.zip --repo "$GITHUB_REPOSITORY" --title "Golden Click $version" --notes-file RELEASE_NOTES.md --latest
+          if [ "$version" = "12.9.2" ]; then
+            gh release view v12.9.0 --repo "$GITHUB_REPOSITORY" --json body --jq .body > /tmp/golden-old-notes.md
+            python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path("/tmp/golden-old-notes.md")
+          warning = "> Publicação antiga com arquivos de versão incorreta. Use a [versão 12.9.2](https://github.com/Codinome007/golden-click-releases/releases/tag/v12.9.2).\n\n"
+          p.write_text(warning + p.read_text(), encoding="utf-8")
+          PY
+            gh release edit v12.9.0 --repo "$GITHUB_REPOSITORY" --title "Golden Click 12.9.0 — publicação antiga; use 12.9.2" --notes-file /tmp/golden-old-notes.md
+          fi
