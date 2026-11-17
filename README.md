@@ -59,6 +59,16 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
+## Novidades da versão 12.9.2
+
+- Importe várias contas por CSV/TXT, com prévia e senhas ocultas.
+- Salve um modelo CSV pelo aplicativo e preencha uma conta por linha: `nome;login;senha;janela`.
+- Até 1.000 contas por arquivo; duplicatas na mesma janela preservam a senha existente.
+- Selecione a conta após importar; a importação não inicia o login.
+- Se o formulário não for reconhecido, abra Transferir dados manualmente e use Calibrar formulário para marcar código, senha e Carregar. Escolha Formulário já aberto (pontos calibrados).
+
+As contas ficam protegidas pelo usuário atual do Windows, fora dos perfis exportados e dos pacotes. Não acompanham o ZIP portátil para outro computador. O arquivo de importação contém senhas legíveis; mantenha-o protegido ou exclua-o após usar. O preenchimento e a autenticação precisam de teste no cliente do jogo.
+
 ## Compatibilidade
 
 Windows 11 x64. A execução dos cliques depende da janela de destino e das permissões dos programas envolvidos. Consulte as notas de cada versão para saber o que foi validado. Compilação automatizada não substitui teste da interface e da instalação no computador de destino.
