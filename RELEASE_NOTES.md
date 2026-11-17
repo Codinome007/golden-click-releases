@@ -1,23 +1,19 @@
-## Golden Click 12.8.1
+# Golden Click 12.9.2
 
-### Janela capturada e coordenadas proporcionais
-- A coluna **Janela** registra sempre a área interna da janela capturada, sem bordas ou barra de título. Não usa a resolução do monitor.
-- Cliques X/Y com referência de janela se ajustam proporcionalmente ao tamanho atual e acompanham a posição da janela na tela.
-- Cada uma das duas janelas selecionadas usa suas próprias dimensões.
-- As coordenadas originais permanecem salvas, evitando erro acumulado após vários redimensionamentos.
-- Passe o mouse em X, Y ou Janela na lista para conferir a prévia na janela de teste.
+## Importação de várias contas
 
-**Exemplo:** o ponto **480,270** numa janela **960×540** passa para **640,360** numa janela **1280×720**.
+Nova opção Importar contas na aba Login — Teste, com prévia e senhas ocultas. Use Salvar modelo CSV e preencha nome;login;senha;janela, uma conta por linha. Aceita CSV/TXT, até 1.000 contas e 2 MB. Registros repetidos na mesma janela são ignorados sem substituir a senha existente. Após importar, escolha qual conta acessar.
 
-### Perfis existentes
-Registros anteriores com referência de janela válida já podem se ajustar. Cliques antigos baseados no monitor ou sem referência mostram **—** e precisam de uma recaptura para habilitar o ajuste. Até lá, mantêm o modo anterior, sem usar a dimensão do monitor como se fosse a da janela.
+## Login com formulário calibrado
 
-O ajuste é proporcional para cliques por coordenadas. Cliques por imagem continuam dependendo do reconhecimento e dos recortes compatíveis com a resolução. Se o layout interno reposicionar elementos de outra forma, pode ser necessário recapturar pontos ou imagens.
+Se a imagem não for reconhecida, abra Transferir dados manualmente, selecione a conta e use Calibrar formulário para marcar código, senha e Carregar. Escolha Formulário já aberto (pontos calibrados) e use Preencher. Se redimensionar a janela, recalibre. F9 interrompe. O envio do formulário não comprova autenticação; confira no jogo.
 
-### Instalar ou atualizar
-Baixe o instalador ou o pacote portátil abaixo. O instalador usa `C:\Golden Click` e preserva os perfis da pasta. Feche as outras instâncias antes de instalar. Na versão 12.8.0, você também pode usar **Verificar atualização** no menu perto do relógio.
+## Instalar ou atualizar
 
-### Validação
-22 verificações de coordenadas/persistência e 14 verificações do atualizador. Compilação automatizada no Windows x64. Interface, instalação e cliques no programa de destino ainda precisam de teste interativo.
+Baixe Golden_Click_Instalador_Windows11_x64.zip e execute Instalar_Golden_Click.exe após extrair. Instala em C:\Golden Click e cria atalho na Área de Trabalho. Para usar sem instalação, extraia Golden_Click_Portatil_Windows11_x64.zip e abra GoldenClick.exe. Feche as demais instâncias antes de instalar. Perfis anteriores são preservados; contas ficam protegidas para o usuário atual do Windows.
 
-Os pacotes não incluem o código-fonte do aplicativo. Os links **Source code** automáticos do GitHub contêm somente a documentação e os arquivos de publicação do canal público.
+Os pacotes não incluem código-fonte, contas ou senhas. O CSV de origem continua legível: mantenha-o protegido ou remova-o quando não for mais necessário. Os links Source code do GitHub contêm somente a documentação do canal público.
+
+## Validação
+
+Pacotes compilados no Windows x64; 90 testes automatizados aprovados. SHA-256, versão interna 12.9.2 e ausência de código-fonte são verificados antes da publicação. Interface, instalação e funcionamento do login precisam ser conferidos no computador de destino.
