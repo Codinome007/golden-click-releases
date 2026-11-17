@@ -5,18 +5,23 @@ on:
       version:
         description: 'Versão estável, por exemplo 12.9.2'
         required: true
+        type: string
       installer_url:
         description: 'URL temporária do artefato do instalador'
         required: true
+        type: string
       installer_sha256:
         description: 'SHA-256 do ZIP do instalador'
         required: true
+        type: string
       portable_url:
         description: 'URL temporária do artefato portátil'
         required: true
+        type: string
       portable_sha256:
         description: 'SHA-256 do ZIP portátil'
         required: true
+        type: string
 permissions:
   contents: write
 jobs:
