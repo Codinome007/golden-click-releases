@@ -1,23 +1,17 @@
-# Golden Click 12.9.6
+# Golden Click 12.9.7
 
-## Correção do perfil após login
+## Correção ao marcar contas
 
-Corrigido o início do perfil após login. **Entrar / testar** agora executa o login individual e, depois da **Espera antes do perfil (s)**, inicia o perfil escolhido em **Após login / fim da fila**. **Preencher** continua somente preenchendo os campos. **Iniciar fila de login** mantém o perfil após a última conta.
+Corrige a exceção **System.NullReferenceException em UpdateLoginOrderLabels** ao marcar contas da fila. A coluna Ordem passa a ser atualizada depois do evento de marcação do Windows, com cada linha associada ao ID da conta. A ordem de seleção continua sendo registrada imediatamente, e marcações seguidas são agrupadas na atualização visual.
 
-O perfil usa apenas as janelas que receberam login, sem repetir um destino selecionado nos dois campos. Um login na Janela 2 não exige selecionar a Janela 1. A execução manual de perfis também aceita o mesmo destino nos dois campos como uma única janela; organizar duas janelas continua exigindo destinos diferentes. Repetições do perfil, calibração, fila e F9 são mantidos.
+Contas, senhas protegidas, perfis, calibrações e tempos anteriores são preservados. **Entrar / testar** mantém login individual seguido do perfil escolhido; **Iniciar fila de login** mantém o perfil após a última conta. F9 continua interrompendo toda a rotina.
 
-O primeiro destino do perfil recebe foco antes de iniciar. O fluxo é por coordenadas e tempo; o envio do formulário não comprova autenticação. Confira se o jogo chegou à tela esperada antes dos cliques do perfil.
+## Atualizar
 
-## Como usar
+Feche todas as instâncias do Golden Click. Baixe e extraia **Golden_Click_Instalador_Windows11_x64.zip**, depois execute **Instalar_Golden_Click.exe**. Para usar a versão portátil, extraia **Golden_Click_Portatil_Windows11_x64.zip** e abra **GoldenClick.exe**. Não é necessário apagar dados ou recadastrar contas para aplicar esta correção.
 
-Escolha o perfil em **Login — Teste → Após login / fim da fila** e ajuste **Espera antes do perfil (s)**. Para uma conta, selecione a linha e use **Entrar / testar**. Para várias, marque as caixas na ordem desejada e use **Iniciar fila de login**. F9 ou Parar interrompe login, esperas e perfil. **Nenhum perfil** desativa essa etapa.
-
-## Instalar ou atualizar
-
-Feche todas as instâncias. Baixe e extraia **Golden_Click_Instalador_Windows11_x64.zip** e execute **Instalar_Golden_Click.exe**. Instala em C:\Golden Click com atalho na Área de Trabalho. Para uso portátil, extraia **Golden_Click_Portatil_Windows11_x64.zip** e abra **GoldenClick.exe**. Perfis e contas locais existentes são preservados.
-
-Pacotes sem código-fonte, contas ou senhas. Os arquivos Source code gerados pelo GitHub contêm somente a documentação pública.
+Pacotes sem código-fonte, contas ou senhas. Os links automáticos Source code contêm somente a documentação pública.
 
 ## Validação
 
-Compilação e testes automatizados em Windows x64. A publicação verifica SHA-256, versão interna 12.9.6 e ausência de fontes. Interface, instalação e comportamento no jogo exigem conferência no computador de destino.
+Testes automatizados e compilação no Windows x64. O teste da interface usa o formulário real e notificações do ListView nativo, sem abrir cofre ou jogo; cobre marcar, desmarcar, remarcar, recarregar, limpar, remover conta, linha incompleta e alternâncias rápidas. A publicação confere SHA-256, versão interna 12.9.7 e ausência de fontes. O funcionamento no cliente do jogo precisa ser conferido no computador de destino.
