@@ -1,3 +1,5 @@
-# Golden Click 12.10.3
+# Golden Click 12.10.4
 
-Em **Janelas e imagens**, selecione **(Nenhuma)** no campo **Janela 1** e escolha a janela de destino no campo **Janela 2**. Os perfis podem ser executados só nesse destino. Use **Salvar** para manter a escolha nas próximas aberturas.
+O login calibrado ajusta as posições dos campos e botões ao tamanho da área interna da janela. As calibrações existentes servem de referência. Se o jogo reorganizar o formulário ao mudar a proporção, recapture os pontos.
+
+Para usar apenas a Janela 2, selecione **(Nenhuma)** em **Janela 1**.
