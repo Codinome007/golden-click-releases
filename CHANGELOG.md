@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.11
+
+- A aba Contas e login tem Selecionar todas e abre com o modo Calibrado. A janela usa mais altura disponível para mostrar os controles. Em Configurações, escolha Segundos ou Milissegundos. Os segundos mostram apenas as casas decimais necessárias, preservando a duração.
+
 ## 12.10.10
 
 - Corrige a exceção ao abrir Contas e login. O atalho usa o ícone do executável e o instalador limpa os ícones versionados antigos na pasta do Golden Click.
