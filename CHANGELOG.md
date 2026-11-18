@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.1
+
+- Janela principal compacta e lista de contas mais baixa.
+
 ## 12.10.0
 
 - Tempos da interface em segundos fracionários, preservando duração e compatibilidade de perfis antigos.
