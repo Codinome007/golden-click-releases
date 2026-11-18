@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.1
+## Versão atual: 12.10.2
+
+O painel **Organização no monitor** mostra os quatro alinhamentos em duas linhas, com espaço para as prévias e os rótulos. A janela continua compacta.
+
+### Janela compacta da versão 12.10.1
 
 A janela principal abre em 640 × 490 de área interna, passando a ocupar cerca de 42% menos área. A lista de contas ficou mais baixa para dar espaço aos controles do formulário e da fila. As abas com mais opções podem ser roladas.
 
