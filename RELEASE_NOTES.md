@@ -1,5 +1,3 @@
-# Golden Click 12.10.2
+# Golden Click 12.10.3
 
-O painel **Organização no monitor** mostra os quatro alinhamentos em duas linhas, com espaço para as prévias e os rótulos. A janela continua compacta.
-
-Feche todas as instâncias antes de atualizar. Baixe o instalador ou a versão portátil em Assets.
+Em **Janelas e imagens**, selecione **(Nenhuma)** no campo **Janela 1** e escolha a janela de destino no campo **Janela 2**. Os perfis podem ser executados só nesse destino. Use **Salvar** para manter a escolha nas próximas aberturas.
