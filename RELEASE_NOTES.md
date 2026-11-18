@@ -1,5 +1,5 @@
-# Golden Click 12.10.6
+# Golden Click 12.10.7
 
-Ao usar a mesma janela para várias contas, a fila pausa antes do próximo login e exibe o nome da conta seguinte. Volte à tela de login do jogo e clique em **Continuar fila**. O programa espera pela confirmação manual antes de inserir os dados da próxima conta.
+Corrige a transição do login para o perfil quando o jogo muda o foco ou o tamanho da janela após enviar o formulário. Se o perfil terminar sem cliques, o Golden Click avisa.
 
-Use **Iniciar fila de login** para percorrer as contas marcadas. **F9** ou **Parar** interrompe também durante a pausa.
+Escolha o perfil em **Após login / fim da fila**. **Entrar / testar** executa o perfil após a conta selecionada. **Iniciar fila de login** executa o perfil depois da última conta.
