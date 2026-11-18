@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.0
+## Versão atual: 12.10.1
+
+A janela principal abre em 640 × 490 de área interna, passando a ocupar cerca de 42% menos área. A lista de contas ficou mais baixa para dar espaço aos controles do formulário e da fila. As abas com mais opções podem ser roladas.
+
+### Interface da versão 12.10.0
 
 **Tempos em segundos:** pausas de cliques, ciclos, reconhecimento de imagem e esperas da calibração agora usam segundos, com até três casas decimais. Exemplo: 0,1 s corresponde à antiga pausa de 100 ms. Os perfis existentes mantêm a duração original; os arquivos internos continuam compatíveis.
 
