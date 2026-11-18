@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.6
+## Versão atual: 12.10.7
+
+Corrige a transição do login para o perfil quando o jogo muda o foco ou o tamanho da janela após enviar o formulário. Se o perfil terminar sem cliques, o Golden Click avisa.
+
+### Fila na versão 12.10.6
 
 Ao usar a mesma janela para várias contas, a fila pausa antes do próximo login e exibe o nome da conta seguinte. Volte à tela de login do jogo e clique em **Continuar fila**. O programa espera pela confirmação manual antes de inserir os dados da próxima conta.
 
