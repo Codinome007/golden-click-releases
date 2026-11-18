@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.7
+## Versão atual: 12.10.8
+
+A fila agora faz o login, aguarda a espera configurada e executa o **Perfil após login** na janela da conta. Só depois de concluir os ciclos do perfil ela segue para o próximo login. Para filas com várias contas, selecione um perfil com número de ciclos definido.
+
+### Correção da versão 12.10.7
 
 Corrige a transição do login para o perfil quando o jogo muda o foco ou o tamanho da janela após enviar o formulário. Se o perfil terminar sem cliques, o Golden Click avisa.
 
@@ -105,7 +109,7 @@ Contas, senhas protegidas, perfis, calibrações e tempos anteriores são preser
 
 ### Perfil após login — 12.9.6
 
-Corrigido o início do perfil após login. **Entrar / testar** agora executa o login individual e, depois da **Espera antes do perfil (s)**, inicia o perfil escolhido em **Após login / fim da fila**. **Preencher** continua somente preenchendo os campos. **Iniciar fila de login** mantém o perfil após a última conta.
+Corrigido o início do perfil após login. **Entrar / testar** agora executa o login individual e, depois da **Espera antes do perfil (s)**, inicia o perfil escolhido em **Perfil após login**. **Preencher** continua somente preenchendo os campos. **Iniciar fila de login** mantém o perfil após a última conta.
 
 O perfil usa apenas as janelas que receberam login, sem repetir um destino selecionado nos dois campos. Um login na Janela 2 não exige selecionar a Janela 1. A execução manual de perfis também aceita o mesmo destino nos dois campos como uma única janela; organizar duas janelas continua exigindo destinos diferentes. Repetições do perfil, calibração, fila e F9 são mantidos.
 
@@ -115,7 +119,7 @@ O primeiro destino do perfil recebe foco antes de iniciar. O fluxo é por coorde
 
 Na aba **Login — Teste**, marque as caixas das contas na ordem desejada. A coluna **Ordem** mostra a sequência; desmarcar e marcar uma conta a move para o fim. Defina **Espera inicial (s)**, **Entre contas (s)** e **Espera antes do perfil (s)**, de 0 a 3600 segundos.
 
-Em **Após login / fim da fila**, escolha **Nenhum perfil** ou um perfil de cliques. Ele inicia somente depois de todas as contas, usando as janelas que receberam login e as repetições configuradas na aba Perfis. **Salvar fila e tempos** preserva a configuração nesta instância, sem salvar senhas no arquivo da fila. A abertura do aplicativo não inicia a execução. Use **Iniciar fila de login** para começar.
+Em **Perfil após login**, escolha **Nenhum perfil** ou um perfil de cliques. Ele inicia somente depois de todas as contas, usando as janelas que receberam login e as repetições configuradas na aba Perfis. **Salvar fila e tempos** preserva a configuração nesta instância, sem salvar senhas no arquivo da fila. A abertura do aplicativo não inicia a execução. Use **Iniciar fila de login** para começar.
 
 **F9** ou **Parar** interrompe logins, esperas e perfil. Qualquer erro interrompe a fila sem seguir para outra conta ou iniciar o perfil final. A ordem, as contas, os destinos e o perfil são fixados ao iniciar; alterações de campos durante a execução só valem para a próxima fila. **Preencher** usa só uma conta, sem perfil. **Entrar / testar** usa uma conta e também inicia o perfil escolhido após a espera.
 
