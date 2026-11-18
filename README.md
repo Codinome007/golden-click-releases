@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.3
+## Versão atual: 12.10.4
+
+O login calibrado ajusta as posições dos campos e botões ao tamanho da área interna da janela. As calibrações existentes servem de referência. Se o jogo reorganizar o formulário ao mudar a proporção, recapture os pontos.
+
+### Janela 2 da versão 12.10.3
 
 Em **Janelas e imagens**, selecione **(Nenhuma)** no campo **Janela 1** e escolha a janela de destino no campo **Janela 2**. Os perfis podem ser executados só nesse destino. Use **Salvar** para manter a escolha nas próximas aberturas.
 
