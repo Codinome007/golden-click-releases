@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.2
+## Versão atual: 12.10.3
+
+Em **Janelas e imagens**, selecione **(Nenhuma)** no campo **Janela 1** e escolha a janela de destino no campo **Janela 2**. Os perfis podem ser executados só nesse destino. Use **Salvar** para manter a escolha nas próximas aberturas.
+
+### Ajuste da versão 12.10.2
 
 O painel **Organização no monitor** mostra os quatro alinhamentos em duas linhas, com espaço para as prévias e os rótulos. A janela continua compacta.
 
