@@ -1,5 +1,5 @@
-# Golden Click 12.10.10
+# Golden Click 12.10.11
 
-Corrige a exceção ao abrir Contas e login. O atalho usa o ícone do executável e o instalador limpa os ícones versionados antigos na pasta do Golden Click.
+A aba Contas e login tem Selecionar todas e abre com o modo Calibrado. A janela usa mais altura disponível para mostrar os controles. Em Configurações, escolha Segundos ou Milissegundos. Os segundos mostram apenas as casas decimais necessárias, preservando a duração.
 
-Para remover os arquivos antigos, execute o instalador com o Golden Click fechado.
+Selecionar todas acrescenta à fila as contas ainda desmarcadas, na ordem da lista. A lista continua com rolagem própria para acessar contas além das dez visíveis.
