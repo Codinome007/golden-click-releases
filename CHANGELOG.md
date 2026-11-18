@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.3
+
+- Permite deixar a Janela 1 como (Nenhuma) e executar perfis apenas na Janela 2.
+
 ## 12.10.2
 
 - Corrige o corte das opções de alinhamento na janela compacta.
