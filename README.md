@@ -59,7 +59,17 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.9.7
+## Versão atual: 12.10.0
+
+**Tempos em segundos:** pausas de cliques, ciclos, reconhecimento de imagem e esperas da calibração agora usam segundos, com até três casas decimais. Exemplo: 0,1 s corresponde à antiga pausa de 100 ms. Os perfis existentes mantêm a duração original; os arquivos internos continuam compatíveis.
+
+**Menus reorganizados:** janela ampliada, seções por função e aba **Contas e login** dividida em contas, formulário/execução individual e fila/perfil final. **Configurações** agrupa aparência, atalhos, arquivos e atualizações.
+
+**Tema:** em **Configurações → Aparência**, escolha **Sistema**, **Claro** ou **Escuro**. Sistema acompanha a preferência de aplicativos do Windows; a escolha é salva por instância. A paleta é aplicada também aos diálogos do programa.
+
+**Ordenar contas:** clique no cabeçalho de **Conta**, **Código/login**, **Janela** ou **Ordem** para crescente; clique novamente para decrescente. As colunas Janela e Ordem usam comparação numérica. Ordenar muda somente a exibição; a fila continua seguindo a ordem em que as contas foram marcadas. Edição, exclusão e calibração usam o ID da conta selecionada.
+
+### Correção mantida da 12.9.7
 
 Corrige a exceção **System.NullReferenceException em UpdateLoginOrderLabels** ao marcar contas da fila. A coluna Ordem passa a ser atualizada depois do evento de marcação do Windows, com cada linha associada ao ID da conta. A ordem de seleção continua sendo registrada imediatamente, e marcações seguidas são agrupadas na atualização visual.
 
