@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.8
+
+- Executa o perfil selecionado após cada login, antes de avançar na fila.
+
 ## 12.10.7
 
 - A barra de status mostra a contagem regressiva durante as esperas da fila, do login e entre ciclos do perfil.
