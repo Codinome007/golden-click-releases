@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.4
+
+- Ajusta proporcionalmente os pontos do login calibrado ao redimensionar a janela.
+
 ## 12.10.3
 
 - Permite deixar a Janela 1 como (Nenhuma) e executar perfis apenas na Janela 2.
