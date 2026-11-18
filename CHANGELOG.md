@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.5
+
+- Corrige alinhamento e posicionamento quando só a Janela 2 está selecionada.
+
 ## 12.10.4
 
 - Ajusta proporcionalmente os pontos do login calibrado ao redimensionar a janela.
