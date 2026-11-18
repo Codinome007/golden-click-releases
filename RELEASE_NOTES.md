@@ -1,5 +1,3 @@
-# Golden Click 12.10.4
+# Golden Click 12.10.5
 
-O login calibrado ajusta as posições dos campos e botões ao tamanho da área interna da janela. As calibrações existentes servem de referência. Se o jogo reorganizar o formulário ao mudar a proporção, recapture os pontos.
-
-Para usar apenas a Janela 2, selecione **(Nenhuma)** em **Janela 1**.
+Com apenas a **Janela 2** selecionada, os botões **Alinhar na tela** e **Posicionar janela** atuam nela. Com as duas selecionadas, esses botões atuam na Janela 1.
