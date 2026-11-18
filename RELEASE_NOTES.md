@@ -1,5 +1,5 @@
-# Golden Click 12.10.1
+# Golden Click 12.10.2
 
-A janela principal abre em 640 × 490 de área interna, passando a ocupar cerca de 42% menos área. A lista de contas ficou mais baixa para dar espaço aos controles do formulário e da fila. As abas com mais opções podem ser roladas.
+O painel **Organização no monitor** mostra os quatro alinhamentos em duas linhas, com espaço para as prévias e os rótulos. A janela continua compacta.
 
-Para atualizar, feche todas as instâncias. Extraia o ZIP do instalador e execute `Instalar_Golden_Click.exe`. Para a versão portátil, extraia o ZIP portátil e abra `GoldenClick.exe`.
+Feche todas as instâncias antes de atualizar. Baixe o instalador ou a versão portátil em Assets.
