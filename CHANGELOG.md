@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.10
+
+- Corrige a exceção ao abrir Contas e login. O atalho usa o ícone do executável e o instalador limpa os ícones versionados antigos na pasta do Golden Click.
+
 ## 12.10.9
 
 - A fila retoma ao reconhecer a tela de login. Se o perfil terminar dentro do jogo, inclua a saída no fim dos cliques para voltar à tela de login. A aba mostra dez contas visíveis e mantém a conta e a etapa no topo. O alinhamento usa a borda visível do Windows.
