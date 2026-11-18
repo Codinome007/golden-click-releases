@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.6
+
+- Permite continuar a fila após voltar à tela de login na mesma janela.
+
 ## 12.10.5
 
 - Corrige alinhamento e posicionamento quando só a Janela 2 está selecionada.
