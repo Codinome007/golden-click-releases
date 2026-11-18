@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.5
+## Versão atual: 12.10.6
+
+Ao usar a mesma janela para várias contas, a fila pausa antes do próximo login e exibe o nome da conta seguinte. Volte à tela de login do jogo e clique em **Continuar fila**. O programa espera pela confirmação manual antes de inserir os dados da próxima conta.
+
+### Alinhamento da versão 12.10.5
 
 Com apenas a **Janela 2** selecionada, os botões **Alinhar na tela** e **Posicionar janela** atuam nela. Com as duas selecionadas, esses botões atuam na Janela 1.
 
