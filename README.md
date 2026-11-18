@@ -59,7 +59,11 @@ Cliques antigos com referência de janela válida também se ajustam. Se aparece
 
 A escala proporcional pressupõe que os elementos mantenham a posição proporcional no layout. Mudanças do layout interno podem exigir recaptura. Cliques por imagem continuam usando reconhecimento e recortes compatíveis com a resolução.
 
-## Versão atual: 12.10.10
+## Versão atual: 12.10.11
+
+A aba Contas e login tem Selecionar todas e abre com o modo Calibrado. A janela usa mais altura disponível para mostrar os controles. Em Configurações, escolha Segundos ou Milissegundos. Os segundos mostram apenas as casas decimais necessárias, preservando a duração.
+
+### Versão 12.10.10
 
 Corrige a exceção ao abrir Contas e login. O atalho usa o ícone do executável e o instalador limpa os ícones versionados antigos na pasta do Golden Click.
 
