@@ -1,5 +1,9 @@
 # Histórico de versões
 
+## 12.10.2
+
+- Corrige o corte das opções de alinhamento na janela compacta.
+
 ## 12.10.1
 
 - Janela principal compacta e lista de contas mais baixa.
