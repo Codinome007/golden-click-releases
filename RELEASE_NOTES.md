@@ -1,5 +1,5 @@
-# Golden Click 12.10.8
+# Golden Click 12.10.9
 
-A fila agora faz o login, aguarda a espera configurada e executa o **Perfil após login** na janela da conta. Só depois de concluir os ciclos do perfil ela segue para o próximo login. Para filas com várias contas, selecione um perfil com número de ciclos definido.
+A fila retoma ao reconhecer a tela de login. Se o perfil terminar dentro do jogo, inclua a saída no fim dos cliques para voltar à tela de login. A aba mostra dez contas visíveis e mantém a conta e a etapa no topo. O alinhamento usa a borda visível do Windows.
 
-Quando duas contas usam a mesma janela, volte à tela de login do jogo e clique em **Continuar fila** após a pausa.
+Mantenha a janela do jogo visível enquanto a fila aguarda. Use F9 ou Parar para cancelar.
