@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 12.10.0
+
+- Tempos da interface em segundos fracionários, preservando duração e compatibilidade de perfis antigos.
+- Menus e seções reorganizados; janela ampliada e aba Contas e login.
+- Aparência Sistema, Claro e Escuro, salva por instância e aplicada aos diálogos.
+- Ordenação crescente/decrescente pelos cabeçalhos das contas, numérica para janela e ordem.
+- Seleção por ID após ordenar, sem alterar a fila de execução.
+- Testes de conversão, tema e ordenação na interface Windows.
+
 ## 12.9.7
 
 - Corrige referência nula ao atualizar a coluna Ordem durante ItemCheck.
