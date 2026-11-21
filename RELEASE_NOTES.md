@@ -1,5 +1,6 @@
-# Golden Click 12.10.12
+# Golden Click 1.0
 
-Em **Configurações → Perfis e arquivos**, use **Exportar backup completo** para salvar perfis, imagens, preferências, filas, calibrações e contas em um arquivo `.gcbak` criptografado com senha.
+- Corrige a importação quando o cofre de contas do Windows de destino está ilegível.
+- Aceita senhas de exportação com pelo menos seis caracteres, incluindo seis dígitos, e oferece a opção Mostrar senha. Backups existentes usam a senha original.
 
-No computador de destino, use **Importar backup completo** e informe a senha da exportação. O programa pede confirmação antes de substituir as configurações correspondentes e a lista de contas.
+A numeração foi reiniciada. Quem usa a série 12 deve baixar e instalar esta atualização manualmente uma vez.
